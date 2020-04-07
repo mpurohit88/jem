@@ -1,8 +1,8 @@
 const Product = require('../models/product.js');
 
-const add = function(req, res, next) {
+const add = async function(req, res, next) {
 
-  const result = new Product(req.body).add();
+  const result = await new Product(req.body).add();
 
   res.send({result: 'success'});
 }
